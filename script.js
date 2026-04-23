@@ -142,7 +142,7 @@ function renderThreatCards() {
     <div class="section">
       <h2 class="section-title">Na co naprawdę najłatwiej się nabrać?</h2>
       <p class="section-text">
-        Wiele zagrożeń nie wygląda groźnie. Wręcz przeciwnie — ich siła polega na tym, że przypominają coś znajomego,
+        Wiele zagrożeń nie wygląda groźnie. Wręcz przeciwnie- ich siła polega na tym, że przypominają coś znajomego,
         pilnego albo po prostu bardzo wygodnego.
       </p>
 
@@ -232,7 +232,7 @@ function renderFlags() {
     <div class="section">
       <h2 class="section-title">5 znaków ostrzegawczych ✦</h2>
       <p class="section-text">
-        To są momenty, przy których naprawdę warto się zatrzymać — nawet jeśli wszystko wygląda bardzo przekonująco.
+        To są momenty, przy których naprawdę warto się zatrzymać, nawet jeśli wszystko wygląda bardzo przekonująco.
       </p>
 
       <div class="red-flags">
@@ -323,19 +323,28 @@ function renderResult() {
   const percent = Math.round((totalPoints / (questions.length * 2)) * 100) || 0;
   const profile = getProfile(percent);
 
+  const analysisBaseUrl = "https://gabr1elastasz3wska-del.github.io/CYBER-MIRROR-ANALYSIS/#";
+  const analysisUrl =
+    analysisBaseUrl +
+    "?score=" +
+    encodeURIComponent(percent) +
+    "&profile=" +
+    encodeURIComponent(profile);
+
   return `
     <div class="result-box">
       <div class="result-score">${percent}%</div>
       <div class="result-profile">${profile}</div>
       <p class="result-text">${getResultDescription(percent)}</p>
-      <a class="next-btn" href="#">Zobacz, co mówi o Tobie ten wynik</a>
-      <button id="Zobacz, co mówi o Tobie ten wynik" class="float-left submit-button" >Home</button>
-      <script type="text/javascript">
-    document.getElementById("myButton").onclick = function () {
-        location.href = "https://gabr1elastasz3wska-del.github.io/CYBER-MIRROR-ANALYSIS/#";
-    };
-</script>
-      
+      <a class="next-btn" href="${analysisUrl}">Zobacz, co o Tobie mówi ten wynik</a>
+      <div class="small-note">
+        To nie jest tylko wynik quizu- to zapis Twoich decyzji w sytuacjach, które naprawdę mogą się wydarzyć.
+      </div>
+    </div>
+  `;
+}
+
+     
 
       <div class="small-note">
         To nie jest tylko wynik quizu — to zapis Twoich decyzji w sytuacjach, które naprawdę mogą się wydarzyć.
@@ -347,7 +356,7 @@ function renderResult() {
 function renderFooter() {
   return `
     <div class="footer">
-      <strong>Autorka projektu:</strong> Gabriela Staszewska ✦<br>
+      <strong>Autorka projektu:</strong> Gabriela Staszewska ★<br>
       uczennica klasy 3b<br>
       LO im. Adama Mickiewicza w Żychlinie
     </div>
@@ -373,12 +382,12 @@ function renderApp() {
           <div class="badge">Projekt konkursowy • Cyberbezpieczeństwo</div>
           <h1 class="title">Cyber-Mirror Expirience</h1>
           <p class="subtitle">
-            Zanim klikniesz — sprawdź, kto naprawdę jest po drugiej stronie ekranu.
-            Ta strona nie jest tylko quizem. To próba pokazania, jak łatwo można dać się złapać na coś,
+            Zanim klikniesz sprawdź, kto naprawdę jest po drugiej stronie ekranu.
+            Ta strona jest próbą pokazania, jak łatwo można dać się złapać na coś,
             co wygląda zwyczajnie.
           </p>
           <a class="hero-button" href="#quiz">Rozpocznij symulację</a>
-          <div class="author-note">projekt Gabrieli Staszewskiej ✦</div>
+          <div class="author-note">projekt Gabrieli Staszewskiej ★</div>
         </div>
 
         ${renderProjectInfo()}
