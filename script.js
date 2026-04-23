@@ -142,7 +142,7 @@ function renderThreatCards() {
     <div class="section">
       <h2 class="section-title">Na co naprawdę najłatwiej się nabrać?</h2>
       <p class="section-text">
-        Wiele zagrożeń nie wygląda groźnie. Wręcz przeciwnie- ich siła polega na tym, że przypominają coś znajomego,
+        Wiele zagrożeń nie wygląda groźnie. Wręcz przeciwnie — ich siła polega na tym, że przypominają coś znajomego,
         pilnego albo po prostu bardzo wygodnego.
       </p>
 
@@ -232,7 +232,7 @@ function renderFlags() {
     <div class="section">
       <h2 class="section-title">5 znaków ostrzegawczych ✦</h2>
       <p class="section-text">
-        To są momenty, przy których naprawdę warto się zatrzymać, nawet jeśli wszystko wygląda bardzo przekonująco.
+        To są momenty, przy których naprawdę warto się zatrzymać — nawet jeśli wszystko wygląda bardzo przekonująco.
       </p>
 
       <div class="red-flags">
@@ -323,29 +323,12 @@ function renderResult() {
   const percent = Math.round((totalPoints / (questions.length * 2)) * 100) || 0;
   const profile = getProfile(percent);
 
-  const analysisBaseUrl = "https://gabr1elastasz3wska-del.github.io/CYBER-MIRROR-ANALYSIS/#";
-  const analysisUrl =
-    analysisBaseUrl +
-    "?score=" +
-    encodeURIComponent(percent) +
-    "&profile=" +
-    encodeURIComponent(profile);
-
   return `
     <div class="result-box">
       <div class="result-score">${percent}%</div>
       <div class="result-profile">${profile}</div>
       <p class="result-text">${getResultDescription(percent)}</p>
-      <a class="next-btn" href="${analysisUrl}">Zobacz, co o Tobie mówi ten wynik</a>
-      <div class="small-note">
-        To nie jest tylko wynik quizu- to zapis Twoich decyzji w sytuacjach, które naprawdę mogą się wydarzyć.
-      </div>
-    </div>
-  `;
-}
-
-     
-
+      <a class="next-btn" href="#">Zobacz, co mówi o Tobie ten wynik</a>
       <div class="small-note">
         To nie jest tylko wynik quizu — to zapis Twoich decyzji w sytuacjach, które naprawdę mogą się wydarzyć.
       </div>
@@ -356,7 +339,7 @@ function renderResult() {
 function renderFooter() {
   return `
     <div class="footer">
-      <strong>Autorka projektu:</strong> Gabriela Staszewska ★<br>
+      <strong>Autorka projektu:</strong> Gabriela Staszewska ✦<br>
       uczennica klasy 3b<br>
       LO im. Adama Mickiewicza w Żychlinie
     </div>
@@ -365,6 +348,8 @@ function renderFooter() {
 
 function renderApp() {
   const app = document.getElementById("app");
+
+ 
 
   if (!finished) {
     app.innerHTML = `
