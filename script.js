@@ -329,6 +329,14 @@ function renderResult() {
       <div class="result-profile">${profile}</div>
       <p class="result-text">${getResultDescription(percent)}</p>
       <a class="next-btn" href="#">Zobacz, co mówi o Tobie ten wynik</a>
+      <button id="Zobacz, co mówi o Tobie ten wynik" class="float-left submit-button" >Home</button>
+      <script type="text/javascript">
+    document.getElementById("myButton").onclick = function () {
+        location.href = "https://gabr1elastasz3wska-del.github.io/CYBER-MIRROR-ANALYSIS/#";
+    };
+</script>
+      
+
       <div class="small-note">
         To nie jest tylko wynik quizu — to zapis Twoich decyzji w sytuacjach, które naprawdę mogą się wydarzyć.
       </div>
