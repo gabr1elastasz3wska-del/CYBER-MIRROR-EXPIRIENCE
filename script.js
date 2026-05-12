@@ -354,15 +354,16 @@ function renderApp() {
       <div class="container">
         <div class="hero">
           <div class="stars">
-            <span class="star s1">✦</span>
-            <span class="star s2">✧</span>
-            <span class="star s3">✦</span>
-            <span class="star s4">✧</span>
-            <span class="star s5">✦</span>
+            <span class="star s1">★</span>
+<span class="star s2">★</span>
+<span class="star s3">★</span>
+<span class="star s4">★</span>
+<span class="star s5">★</span>
+
           </div>
 
           <div class="badge">Projekt konkursowy • Cyberbezpieczeństwo</div>
-          <h1 class="title">CyberMirror</h1>
+          <h1 class="title">Cyber-Mirror Expirience</h1>
           <p class="subtitle">
             Zanim klikniesz — sprawdź, kto naprawdę jest po drugiej stronie ekranu.
             Ta strona nie jest tylko quizem. To próba pokazania, jak łatwo można dać się złapać na coś,
@@ -385,11 +386,12 @@ function renderApp() {
       <div class="container">
         <div class="hero">
           <div class="stars">
-            <span class="star s1">✦</span>
-            <span class="star s2">✧</span>
-            <span class="star s3">✦</span>
-            <span class="star s4">✧</span>
-            <span class="star s5">✦</span>
+            <span class="star s1">★</span>
+            <span class="star s2">★</span>
+            <span class="star s3">★</span>
+            <span class="star s4">★</span>
+            <span class="star s5">★</span>
+
           </div>
 
           <div class="badge">Wynik symulacji</div>
