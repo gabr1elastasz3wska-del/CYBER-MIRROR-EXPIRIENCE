@@ -2,348 +2,187 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CyberMirror Analysis</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="app"></div>
-  <script src="./script.js"></script>
+
+<div id="app"></div>
+
+<script src="script.js"></script>
+
 </body>
-</html>
-body {
+</html>body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   background: #020617;
   color: white;
 }
 
 .container {
-  max-width: 960px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 24px;
 }
 
-.hero {
-  text-align: center;
-  margin-bottom: 28px;
-}
-
 .title {
-  font-size: 44px;
+  font-size: 42px;
   margin-bottom: 10px;
 }
 
 .subtitle {
-  font-size: 18px;
   color: #cbd5e1;
-  margin: 0 auto;
-  max-width: 700px;
-  line-height: 1.6;
+  margin-bottom: 30px;
 }
 
-.top-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-bottom: 20px;
-}
-
-.info-box {
-  background: #1e293b;
+.result-box {
+  background: #0f172a;
+  padding: 30px;
   border-radius: 16px;
-  padding: 22px;
+  margin-bottom: 25px;
 }
 
-.info-label {
-  color: #93c5fd;
-  margin-bottom: 10px;
-  font-size: 15px;
-}
-
-.info-value-big {
-  font-size: 56px;
+.score {
+  font-size: 60px;
   font-weight: bold;
-  margin: 0;
 }
 
-.info-value-profile {
-  font-size: 28px;
-  font-weight: bold;
-  margin: 0;
-  color: #67e8f9;
-}
-
-.card {
-  background: #1e293b;
-  border-radius: 16px;
-  padding: 22px;
-  margin-bottom: 18px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-}
-
-.card-title {
-  font-size: 24px;
-  margin: 0 0 14px 0;
-}
-
-.card-text {
-  line-height: 1.7;
-  color: #e2e8f0;
-}
-
-.bar-row {
-  display: grid;
-  grid-template-columns: 140px 1fr 60px;
-  gap: 12px;
-  align-items: center;
-  margin-bottom: 14px;
-}
-
-.bar-label {
-  color: #e2e8f0;
-}
-
-.bar-outer {
-  height: 16px;
-  background: #334155;
-  border-radius: 999px;
-  overflow: hidden;
-}
-
-.bar-fill-green {
-  height: 16px;
-  background: linear-gradient(90deg, #22c55e, #06b6d4);
-}
-
-.bar-fill-red {
-  height: 16px;
-  background: linear-gradient(90deg, #f97316, #ef4444);
-}
-
-.grid-two {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-}
-
-.list {
-  padding-left: 20px;
-  margin: 0;
-}
-
-.list li {
-  margin-bottom: 10px;
-  line-height: 1.6;
-  color: #e2e8f0;
-}
-
-.back-btn {
-  display: inline-block;
+.profile {
+  font-size: 22px;
   margin-top: 10px;
-  background: #06b6d4;
-  color: #083344;
-  padding: 14px 22px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: bold;
 }
 
-.small-note {
-  color: #94a3b8;
-  font-size: 14px;
-  margin-top: 12px;
+.bar {
+  height: 12px;
+  background: #1e293b;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 12px 0;
 }
 
-@media (max-width: 768px) {
-  .top-grid,
-  .grid-two {
-    grid-template-columns: 1fr;
-  }
-
-  .bar-row {
-    grid-template-columns: 1fr;
-  }
-
-  .info-value-big {
-    font-size: 44px;
-  }
-}
-function getQueryParam(name) {
-  const params = new URLSearchParams(window.location.search);
-  return params.get(name);
+.bar-fill {
+  height: 12px;
+  background: #22c55e;
 }
 
-function getProfileLabel(type) {
-  if (type === "ostrozny") return "Ostrożny użytkownik";
-  if (type === "srednie-ryzyko") return "Użytkownik średniego ryzyka";
-  return "Impulsywny użytkownik";
+.section {
+  margin-top: 30px;
 }
 
-function getDescription(type) {
-  if (type === "ostrozny") {
-    return "Podejmujesz raczej przemyślane decyzje, sprawdzasz źródła i jesteś odporny na część typowych prób manipulacji. Nadal warto uważać na nowe formy oszustw, zwłaszcza wykorzystujące AI i deepfake.";
-  }
-  if (type === "srednie-ryzyko") {
-    return "Bywasz ostrożny, ale nie zawsze weryfikujesz informacje wystarczająco dokładnie. W sytuacjach presji czasu lub przy silnych emocjach możesz podjąć ryzykowną decyzję.";
-  }
-  return "Reagujesz szybko i intuicyjnie, co zwiększa podatność na phishing, fałszywe strony i manipulację emocjonalną. W Twoim przypadku kluczowe jest zatrzymanie się i weryfikacja informacji.";
+.section h2 {
+  margin-bottom: 10px;
 }
 
-function getRisks(type) {
-  if (type === "ostrozny") {
+.recommendation {
+  background: #1e293b;
+  padding: 14px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}function getParam(name) {
+  const url = new URL(window.location.href);
+  return url.searchParams.get(name);
+}
+
+const score = parseInt(getParam("score")) || 50;
+
+function getProfile(score) {
+  if (score >= 80) return "Świadomy użytkownik";
+  if (score >= 60) return "Uważny, ale podatny na presję";
+  if (score >= 40) return "Impulsywny klikacz";
+  return "Wysokie ryzyko manipulacji";
+}
+
+function getRecommendations(score) {
+  if (score >= 80) {
     return [
-      "Możesz zbyt mocno ufać wiarygodnie wyglądającym komunikatom.",
-      "Nowe zagrożenia, np. deepfake, nadal wymagają czujności.",
-      "Wysoka ostrożność nie zwalnia z regularnego aktualizowania wiedzy."
+      "Zachowujesz ostrożność – to Twoja największa przewaga.",
+      "Nie działasz pod presją czasu.",
+      "Analizujesz zanim klikniesz."
     ];
   }
-  if (type === "srednie-ryzyko") {
+
+  if (score >= 60) {
     return [
-      "Nie zawsze sprawdzasz nadawcę lub adres strony.",
-      "Możesz ulec presji czasu i pilności komunikatu.",
-      "Czasem oceniasz wiadomość po wyglądzie zamiast po źródle."
+      "Uważaj na sytuacje z presją czasu.",
+      "Zatrzymaj się przed kliknięciem linku.",
+      "Nie ufaj automatycznie wiadomościom."
     ];
   }
+
+  if (score >= 40) {
+    return [
+      "Twoje decyzje są szybkie – to ryzyko.",
+      "Zanim klikniesz, sprawdź źródło.",
+      "Nie reaguj impulsywnie."
+    ];
+  }
+
   return [
-    "Masz tendencję do szybkiego klikania bez weryfikacji.",
-    "Możesz ufać komunikatom podszywającym się pod instytucje lub znajomych.",
-    "Presja czasu i emocji silnie wpływa na Twoje decyzje."
-  ];
-}
-
-function getRecommendations(type) {
-  if (type === "ostrozny") {
-    return [
-      "Weryfikuj nietypowe prośby innym kanałem kontaktu.",
-      "Czytaj dokładnie adresy URL i nazwy domen.",
-      "Śledź nowe techniki oszustw cyfrowych."
-    ];
-  }
-  if (type === "srednie-ryzyko") {
-    return [
-      "Zawsze sprawdzaj nadawcę i źródło linku.",
-      "Nie działaj pod presją czasu.",
-      "Przed zalogowaniem upewnij się, że strona jest prawdziwa."
-    ];
-  }
-  return [
-    "Nigdy nie klikaj odruchowo w linki z wiadomości.",
-    "W przypadku kodu BLIK lub danych logowania zawsze weryfikuj prośbę.",
-    "Zanim wykonasz działanie, zatrzymaj się i sprawdź źródło."
+    "Jesteś bardzo podatny na manipulację.",
+    "Zawsze sprawdzaj nadawcę wiadomości.",
+    "Nigdy nie działaj natychmiast pod presją."
   ];
 }
 
 function getBars(score) {
-  const s = Number(score) || 0;
-  return {
-    czujnosc: Math.min(100, s),
-    wiedza: Math.min(100, Math.max(20, s + 10)),
-    impulsywnosc: Math.max(5, 100 - s)
-  };
+  return [
+    { label: "Ostrożność", value: score },
+    { label: "Podatność na presję", value: 100 - score },
+    { label: "Refleksyjność", value: score - 10 }
+  ];
 }
 
-function renderPage() {
-  const score = Number(getQueryParam("score")) || 0;
-  const type = getQueryParam("type") || "impulsywny";
-
-  const profileLabel = getProfileLabel(type);
-  const description = getDescription(type);
-  const risks = getRisks(type);
-  const recommendations = getRecommendations(type);
+function render() {
+  const profile = getProfile(score);
+  const recs = getRecommendations(score);
   const bars = getBars(score);
-
-  let risksHtml = "";
-  risks.forEach(function (item) {
-    risksHtml += "<li>" + item + "</li>";
-  });
-
-  let recommendationsHtml = "";
-  recommendations.forEach(function (item) {
-    recommendationsHtml += "<li>" + item + "</li>";
-  });
 
   document.getElementById("app").innerHTML = `
     <div class="container">
-      <div class="hero">
-        <h1 class="title">CyberMirror Analysis</h1>
-        <p class="subtitle">
-          Analiza podatności na zagrożenia cyfrowe na podstawie decyzji użytkownika.
+
+      <h1 class="title">CyberMirror Analysis ✦</h1>
+      <p class="subtitle">
+        To nie jest tylko wynik. To sposób, w jaki reagujesz w sytuacjach online.
+      </p>
+
+      <div class="result-box">
+        <div class="score">${score}%</div>
+        <div class="profile">${profile}</div>
+      </div>
+
+      <div class="section">
+        <h2>Twoje zachowanie</h2>
+        ${bars.map(b => `
+          <div>
+            <div>${b.label}</div>
+            <div class="bar">
+              <div class="bar-fill" style="width:${b.value}%"></div>
+            </div>
+          </div>
+        `).join("")}
+      </div>
+
+      <div class="section">
+        <h2>Co to oznacza</h2>
+        ${recs.map(r => <div class="recommendation">${r}</div>).join("")}
+      </div>
+
+      <div class="section">
+        <h2>Wnioski</h2>
+        <p>
+          Twoje decyzje w sieci nie zawsze wynikają z wiedzy,
+          ale z reakcji na sytuację. To właśnie tam zaczyna się większość zagrożeń.
         </p>
       </div>
 
-      <div class="top-grid">
-        <div class="info-box">
-          <div class="info-label">Twój wynik</div>
-          <p class="info-value-big">${score}%</p>
-        </div>
-
-        <div class="info-box">
-          <div class="info-label">Twój profil</div>
-          <p class="info-value-profile">${profileLabel}</p>
-        </div>
+      <div class="section" style="margin-top:40px; font-size:14px; color:#94a3b8;">
+        Autorka: Michalina Staszewska<br>
+        klasa 2 LO<br>
+        LO im. Adama Mickiewicza w Żychlinie
       </div>
 
-      <div class="card">
-        <h2 class="card-title">Interpretacja wyniku</h2>
-        <p class="card-text">${description}</p>
-      </div>
-
-      <div class="card">
-        <h2 class="card-title">Wskaźniki bezpieczeństwa</h2>
-
-        <div class="bar-row">
-          <div class="bar-label">Czujność</div>
-          <div class="bar-outer">
-            <div class="bar-fill-green" style="width: ${bars.czujnosc}%"></div>
-          </div>
-          <div>${bars.czujnosc}%</div>
-        </div>
-
-        <div class="bar-row">
-          <div class="bar-label">Wiedza</div>
-          <div class="bar-outer">
-            <div class="bar-fill-green" style="width: ${bars.wiedza}%"></div>
-          </div>
-          <div>${bars.wiedza}%</div>
-        </div>
-
-        <div class="bar-row">
-          <div class="bar-label">Impulsywność</div>
-          <div class="bar-outer">
-            <div class="bar-fill-red" style="width: ${bars.impulsywnosc}%"></div>
-          </div>
-          <div>${bars.impulsywnosc}%</div>
-        </div>
-      </div>
-
-      <div class="grid-two">
-        <div class="card">
-          <h2 class="card-title">Najważniejsze ryzyka</h2>
-          <ul class="list">${risksHtml}</ul>
-        </div>
-
-        <div class="card">
-          <h2 class="card-title">Rekomendacje</h2>
-          <ul class="list">${recommendationsHtml}</ul>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2 class="card-title">Co mogłoby się stać w realnym ataku?</h2>
-        <p class="card-text">
-          W prawdziwej sytuacji błędna decyzja mogłaby prowadzić do przejęcia danych logowania,
-          utraty środków finansowych, wyłudzenia kodu BLIK, przejęcia konta społecznościowego
-          albo dalszego wykorzystania Twoich danych przez cyberprzestępców.
-        </p>
-
-        <a class="back-btn" href="#">Powrót do symulacji</a>
-        <div class="small-note">
-          Link powrotny do strony 1 podłączymy za chwilę.
-        </div>
-      </div>
     </div>
   `;
 }
 
-renderPage();
+render();
