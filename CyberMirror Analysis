@@ -10,35 +10,41 @@
   <div id="app"></div>
   <script src="script.js"></script>
 </body>
-</html>
-body {
+</html>body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(255, 204, 0, 0.25), transparent 45%),
-    radial-gradient(circle at 80% 30%, rgba(255, 140, 0, 0.25), transparent 45%),
-    radial-gradient(circle at 50% 80%, rgba(255, 80, 0, 0.25), transparent 45%),
-    linear-gradient(180deg, #1a0603 0%, #020617 100%);
-  background-size: 200% 200%;
-  animation: gradientMove 18s ease infinite;
-  color: white;
+  background: linear-gradient(
+    90deg,
+    #2c1a0f 0%,
+    #7c2d12 40%,
+    #9a3412 70%,
+    #7f1d1d 100%
+  );
+  color: #e5e7eb;
 }
+
 .container {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 24px;
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 30px;
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
 }
 
 .hero {
-  padding: 54px 20px 34px 20px;
+  padding: 48px 20px 34px 20px;
   text-align: center;
 }
 
 .badge {
   display: inline-block;
-  background: rgba(14, 165, 233, 0.14);
-  color: #bae6fd;
-  border: 1px solid rgba(125, 211, 252, 0.28);
+  background: rgba(251, 191, 36, 0.16);
+  color: #fde68a;
+  border: 1px solid rgba(251, 191, 36, 0.32);
   padding: 8px 14px;
   border-radius: 999px;
   font-size: 14px;
@@ -49,12 +55,12 @@ body {
   font-size: 48px;
   margin: 0 0 14px 0;
   letter-spacing: 0.2px;
-  color: #fde68a;
+  color: #f9fafb;
 }
 
 .subtitle {
   font-size: 18px;
-  color: #dbeafe;
+  color: #d1d5db;
   margin: 0 auto;
   max-width: 760px;
   line-height: 1.75;
@@ -67,10 +73,11 @@ body {
 .section-title {
   font-size: 30px;
   margin: 0 0 10px 0;
+  color: #f9fafb;
 }
 
 .section-text {
-  color: #cbd5e1;
+  color: #d1d5db;
   line-height: 1.75;
   margin-bottom: 18px;
   max-width: 860px;
@@ -83,15 +90,15 @@ body {
 }
 
 .info-box {
-  background: rgba(15, 23, 42, 0.9);
-  border: 1px solid rgba(100, 116, 139, 0.2);
-  border-radius: 18px;
+  background: rgba(30, 41, 59, 0.88);
   padding: 26px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
 
 .info-label {
-  color: #93c5fd;
+  color: #fbbf24;
   font-size: 15px;
   margin-bottom: 10px;
 }
@@ -100,32 +107,49 @@ body {
   font-size: 58px;
   font-weight: bold;
   margin: 0;
+  color: #f9fafb;
 }
 
 .info-value-profile {
   font-size: 28px;
   font-weight: bold;
   margin: 0;
-  color: #fb923c;
+  color: #fbbf24;
+  line-height: 1.4;
+}
+
+.card,
+.factor-card,
+.impact-card,
+.tip-card {
+  background: rgba(30, 41, 59, 0.88);
+  border-radius: 18px;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
 .card {
-  background: rgba(30, 41, 59, 0.94);
-  border-radius: 18px;
-  padding: 24px;
-  border: 1px solid rgba(100, 116, 139, 0.2);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
   margin-bottom: 18px;
+}
+
+.card:hover,
+.factor-card:hover,
+.impact-card:hover,
+.tip-card:hover {
+  transform: translateY(-3px);
+  transition: 0.2s ease;
 }
 
 .card-title {
   font-size: 24px;
   margin: 0 0 14px 0;
+  color: #f9fafb;
 }
 
 .card-text {
   line-height: 1.75;
-  color: #e2e8f0;
+  color: #e5e7eb;
 }
 
 .grid-4 {
@@ -140,17 +164,6 @@ body {
   gap: 18px;
 }
 
-.factor-card,
-.impact-card,
-.tip-card {
-  background: rgba(30, 41, 59, 0.94);
-  border-radius: 18px;
-  padding: 22px;
-  border: 1px solid rgba(100, 116, 139, 0.2);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
-  min-height: 180px;
-}
-
 .factor-icon,
 .impact-icon,
 .tip-icon {
@@ -163,12 +176,13 @@ body {
 .tip-title {
   font-size: 21px;
   margin: 0 0 10px 0;
+  color: #f9fafb;
 }
 
 .factor-text,
 .impact-text,
 .tip-text {
-  color: #e2e8f0;
+  color: #e5e7eb;
   line-height: 1.65;
   margin: 0;
 }
@@ -186,12 +200,12 @@ body {
 }
 
 .bar-label {
-  color: #e2e8f0;
+  color: #e5e7eb;
 }
 
 .bar-outer {
   height: 16px;
-  background: #334155;
+  background: rgba(51, 65, 85, 0.9);
   border-radius: 999px;
   overflow: hidden;
 }
@@ -203,39 +217,40 @@ body {
 
 .bar-fill-orange {
   height: 16px;
-  background: linear-gradient(90deg, #f59e0b, #ef4444);
+  background: linear-gradient(90deg, #fef08a, #fb923c, #ef4444);
 }
 
 .note-box {
-  background: rgba(15, 23, 42, 0.88);
-  border: 1px solid rgba(100, 116, 139, 0.2);
+  background: rgba(30, 41, 59, 0.88);
   border-radius: 18px;
   padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
 .note-box p {
   margin: 0;
   line-height: 1.8;
-  color: #dbe4ef;
+  color: #e5e7eb;
 }
 
 .back-btn {
   display: inline-block;
-  margin-top: 12px;
-  background: #dbeafe;
-  color: #0f172a;
+  margin-top: 16px;
+  background: #fef08a;
+  color: #78350f;
   text-decoration: none;
   font-weight: bold;
   padding: 14px 22px;
   border-radius: 12px;
-  border: 1px solid #93c5fd;
+  border: 1px solid #facc15;
 }
 
 .footer {
   margin-top: 36px;
   padding: 22px;
-  border-top: 1px solid #1e293b;
-  color: #94a3b8;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: #d1d5db;
   text-align: center;
   font-size: 15px;
   line-height: 1.8;
@@ -273,8 +288,11 @@ body {
 }
 
 const score = Number(getQueryParam("score")) || 0;
+const profileFromUrl = getQueryParam("profile");
 
 function getProfile(score) {
+  if (profileFromUrl) return profileFromUrl;
+
   if (score >= 80) return "Świadomy i uważny użytkownik";
   if (score >= 50) return "Użytkownik, który potrzebuje chwili więcej";
   return "Użytkownik podatny na presję i pozorną wiarygodność";
@@ -284,18 +302,33 @@ function getDescription(score) {
   if (score >= 80) {
     return "Ten wynik nie oznacza, że nic Ci nie grozi. Pokazuje raczej, że potrafisz zatrzymać się wtedy, kiedy wiele osób klika odruchowo. W praktyce to właśnie ta sekunda refleksji bywa najskuteczniejszą ochroną.";
   }
+
   if (score >= 50) {
     return "Nie chodzi o brak wiedzy, tylko o momenty, w których coś wygląda wystarczająco normalnie, żeby nie wzbudzić od razu podejrzeń. To właśnie tam najłatwiej o błąd — szczególnie pod wpływem pośpiechu albo emocji.";
   }
+
   return "Ten wynik sugeruje, że w sytuacji presji, pilności albo pozornej wiarygodności możesz reagować zbyt szybko. Cyberzagrożenia bardzo często nie wykorzystują niewiedzy technicznej, tylko naturalne ludzkie odruchy.";
 }
 
 function getBars(score) {
   const s = Number(score) || 0;
+
   return [
-    { label: "Czujność", value: Math.min(100, s), type: "blue" },
-    { label: "Refleksyjność", value: Math.min(100, Math.max(10, s + 8)), type: "blue" },
-    { label: "Podatność na presję", value: Math.max(5, 100 - s), type: "orange" }
+    {
+      label: "Czujność",
+      value: Math.min(100, s),
+      type: "blue"
+    },
+    {
+      label: "Refleksyjność",
+      value: Math.min(100, Math.max(10, s + 8)),
+      type: "blue"
+    },
+    {
+      label: "Podatność na presję",
+      value: Math.max(5, 100 - s),
+      type: "orange"
+    }
   ];
 }
 
@@ -400,8 +433,8 @@ function getTips(score) {
       icon: "📖",
       title: "Ćwicz rozpoznawanie schematów",
       text: "Im częściej zauważasz presję, pilność i pozorną wiarygodność, tym trudniej Cię złapać."
-      }
-    ];
+    }
+  ];
 }
 
 function renderFactors() {
@@ -416,15 +449,17 @@ function renderFactors() {
       </p>
 
       <div class="grid-4">
-        ${factors.map(function (item) {
-          return `
-            <div class="factor-card">
-              <div class="factor-icon">${item.icon}</div>
-              <h3 class="factor-title">${item.title}</h3>
-              <p class="factor-text">${item.text}</p>
-            </div>
-          `;
-        }).join("")}
+        ${factors
+          .map(function (item) {
+            return `
+              <div class="factor-card">
+                <div class="factor-icon">${item.icon}</div>
+                <h3 class="factor-title">${item.title}</h3>
+                <p class="factor-text">${item.text}</p>
+              </div>
+            `;
+          })
+          .join("")}
       </div>
     </div>
   `;
@@ -437,19 +472,22 @@ function renderImpacts() {
     <div class="section">
       <h2 class="section-title">Do czego może prowadzić jedna zła decyzja?</h2>
       <p class="section-text">
-        Wiele osób myśli o cyberataku jak o czymś abstrakcyjnym. Tymczasem skutki są bardzo konkretne i często zaczynają się od drobnego kliknięcia.
+        Wiele osób myśli o cyberataku jak o czymś abstrakcyjnym.
+        Tymczasem skutki są bardzo konkretne i często zaczynają się od drobnego kliknięcia.
       </p>
 
       <div class="grid-3">
-        ${impacts.map(function (item) {
-          return `
-            <div class="impact-card">
-              <div class="impact-icon">${item.icon}</div>
-              <h3 class="impact-title">${item.title}</h3>
-              <p class="impact-text">${item.text}</p>
-            </div>
-          `;
-        }).join("")}
+        ${impacts
+          .map(function (item) {
+            return `
+              <div class="impact-card">
+                <div class="impact-icon">${item.icon}</div>
+                <h3 class="impact-title">${item.title}</h3>
+                <p class="impact-text">${item.text}</p>
+              </div>
+            `;
+          })
+          .join("")}
       </div>
     </div>
   `;
@@ -462,19 +500,22 @@ function renderTips(score) {
     <div class="section">
       <h2 class="section-title">Jak nie dać się złapać drugi raz?</h2>
       <p class="section-text">
-        Najlepsza ochrona nie zawsze polega na większej wiedzy technicznej. Czasem polega na zmianie jednego nawyku.
+        Najlepsza ochrona nie zawsze polega na większej wiedzy technicznej.
+        Czasem polega na zmianie jednego nawyku.
       </p>
 
       <div class="grid-3">
-        ${tips.map(function (item) {
-          return `
-            <div class="tip-card">
-              <div class="tip-icon">${item.icon}</div>
-              <h3 class="tip-title">${item.title}</h3>
-              <p class="tip-text">${item.text}</p>
-            </div>
-          `;
-        }).join("")}
+        ${tips
+          .map(function (item) {
+            return `
+              <div class="tip-card">
+                <div class="tip-icon">${item.icon}</div>
+                <h3 class="tip-title">${item.title}</h3>
+                <p class="tip-text">${item.text}</p>
+              </div>
+            `;
+          })
+          .join("")}
       </div>
     </div>
   `;
@@ -487,23 +528,27 @@ function renderBars(score) {
     <div class="card">
       <h2 class="card-title">Jak czytać ten wynik?</h2>
       <p class="card-text">
-        To nie jest test inteligencji ani egzamin z teorii. Wynik pokazuje raczej, jak reagujesz w sytuacjach,
-        w których liczy się pośpiech, zaufanie albo pierwsze wrażenie.
+        To nie jest test inteligencji ani egzamin z teorii. Wynik pokazuje raczej,
+        jak reagujesz w sytuacjach, w których liczy się pośpiech, zaufanie albo pierwsze wrażenie.
       </p>
 
       <div class="bars-wrap">
-        ${bars.map(function (bar) {
-          const fillClass = bar.type === "orange" ? "bar-fill-orange" : "bar-fill-blue";
-          return `
-            <div class="bar-row">
-              <div class="bar-label">${bar.label}</div>
-              <div class="bar-outer">
-                <div class="${fillClass}" style="width: ${bar.value}%"></div>
+        ${bars
+          .map(function (bar) {
+            const fillClass =
+              bar.type === "orange" ? "bar-fill-orange" : "bar-fill-blue";
+
+            return `
+              <div class="bar-row">
+                <div class="bar-label">${bar.label}</div>
+                <div class="bar-outer">
+                  <div class="${fillClass}" style="width: ${bar.value}%"></div>
+                </div>
+                <div>${bar.value}%</div>
               </div>
-              <div>${bar.value}%</div>
-            </div>
-          `;
-        }).join("")}
+            `;
+          })
+          .join("")}
       </div>
     </div>
   `;
@@ -571,15 +616,4 @@ function renderPage() {
   `;
 }
 
-renderPage();body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(255, 204, 0, 0.25), transparent 45%),
-    radial-gradient(circle at 80% 30%, rgba(255, 140, 0, 0.25), transparent 45%),
-    radial-gradient(circle at 50% 80%, rgba(255, 80, 0, 0.25), transparent 45%),
-    linear-gradient(180deg, #1a0603 0%, #020617 100%);
-  background-size: 200% 200%;
-  animation: gradientMove 18s ease infinite;
-  color: white;
-}
+renderPage();
