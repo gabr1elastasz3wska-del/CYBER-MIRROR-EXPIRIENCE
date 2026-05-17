@@ -348,7 +348,7 @@ function renderResult() {
 
       <a 
         class="next-btn"
-        href="https://https://gabr1elastasz3wska-del.github.io/CYBER-MIRROR-ANALYSIS/?score=${percent}"
+        href="https://gabr1elastasz3wska-del.github.io/CYBER-MIRROR-ANALYSIS/?score=${percent}"
       >
         Zobacz, co o Tobie mówi ten wynik
       </a>
