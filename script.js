@@ -323,7 +323,7 @@ function renderResult() {
   const percent = Math.round((totalPoints / (questions.length * 2)) * 100) || 0;
   const profile = getProfile(percent);
 
-  const analysisBaseUrl = "https://gabr1elastasz3wska-del.github.io/CYBER-MIRROR-ANALYSIS/";
+  const "analysisBaseUrl" = "https://gabr1elastasz3wska-del.github.io/CYBER-MIRROR-ANALYSIS/";
   const analysisUrl =
     analysisBaseUrl +
     "?score=" +
