@@ -1,4 +1,4 @@
-const analysisBaseUrl = "https://gabr1elastasz3wska-del.github.io/CYBER-MIRROR-ANALYSIS/";
+const analysisBaseUrl = "https://www.google.com/?hl=pl&zx=1779046200467";
 
 const questions = [
   {
