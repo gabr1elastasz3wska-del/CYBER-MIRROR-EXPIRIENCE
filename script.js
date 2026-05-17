@@ -316,10 +316,6 @@ function renderResult() {
       <a class="next-btn" href="${analysisUrl}">
         Dowiedz się więcej
       </a>
-
-      <div class="small-note">
-        Link kontrolny:<br>
-        <span style="word-break: break-all;">${analysisUrl}</span>
       </div>
     </div>
   `;
