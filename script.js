@@ -1,4 +1,4 @@
-const analysisBaseUrl = "https://www.google.com/?hl=pl&zx=1779046200467";
+const analysisBaseUrl = "https://gabr1elastasz3wska-del.github.io/CYBER-MIRROR-ANALYSIS/";
 
 const questions = [
   {
@@ -305,8 +305,8 @@ function renderResult() {
         Zobacz, co o Tobie mówi ten wynik
       </a>
 
-      <div class="small-note">
-        Link do analizy: <br>
+      <p class="small-note">
+        Link kontrolny: <br>
         <span style="word-break: break-all;">${analysisUrl}</span>
       </div>
     </div>
