@@ -1,4 +1,5 @@
 const analysisBaseUrl = "https://gabr1elastasz3wska-del.github.io/CYBER-MIRROR-ANALYSIS/";
+
 const questions = [
   {
     id: 1,
@@ -91,12 +92,12 @@ function getProfile(percent) {
 
 function getResultDescription(percent) {
   if (percent >= 80) {
-    return "Masz w sobie sporo cyfrowej czujności. Nie działasz odruchowo i potrafisz zauważyć moment, w którym ktoś próbuje wymusić na Tobie pośpiech albo zaufanie. To nie znaczy, że nic Ci nie grozi, ale w wielu sytuacjach umiesz się zatrzymać dokładnie wtedy, kiedy trzeba.";
+    return "Masz w sobie sporo cyfrowej czujności. Nie działasz odruchowo i potrafisz zauważyć moment, w którym ktoś próbuje wymusić na Tobie pośpiech albo zaufanie.";
   }
   if (percent >= 50) {
-    return "Widać, że część zagrożeń rozpoznajesz, ale nie zawsze od razu. W codziennych sytuacjach online możesz działać dobrze, dopóki nie pojawi się presja czasu, emocje albo coś, co wygląda bardzo zwyczajnie. To właśnie ten moment zawahania warto ćwiczyć.";
+    return "Widać, że część zagrożeń rozpoznajesz, ale nie zawsze od razu. W codziennych sytuacjach online możesz działać dobrze, dopóki nie pojawi się presja czasu, emocje albo coś, co wygląda bardzo zwyczajnie.";
   }
-  return "Najgroźniejsze nie jest to, że brakuje Ci wiedzy, tylko to, że można Cię wciągnąć w szybką decyzję. Cyberzagrożenia rzadko wyglądają jak coś oczywistego. Częściej przypominają wiadomość, link albo prośbę, która wydaje się normalna.";
+  return "Najgroźniejsze nie jest to, że brakuje Ci wiedzy, tylko to, że można Cię wciągnąć w szybką decyzję. Cyberzagrożenia często przypominają wiadomość, link albo prośbę, która wydaje się normalna.";
 }
 
 function handleAnswer(questionId, optionIndex) {
@@ -109,8 +110,21 @@ function finishQuiz() {
     alert("Najpierw odpowiedz na wszystkie pytania.");
     return;
   }
+
   finished = true;
   renderApp();
+}
+
+function getScore() {
+  let totalPoints = 0;
+
+  questions.forEach(function (q) {
+    if (answers[q.id] !== undefined) {
+      totalPoints += q.options[answers[q.id]].points;
+    }
+  });
+
+  return Math.round((totalPoints / (questions.length * 2)) * 100) || 0;
 }
 
 function renderProjectInfo() {
@@ -120,22 +134,15 @@ function renderProjectInfo() {
       <div class="info-panel">
         <p>
           Stworzyłam tę stronę z myślą o tym, że cyberzagrożenia nie wyglądają dziś jak coś z filmów o hakerach.
-          Znacznie częściej przypominają zwykłą wiadomość, link, prośbę od znajomego albo pilny komunikat,
-          który na pierwszy rzut oka wydaje się całkiem normalny.
+          Znacznie częściej przypominają zwykłą wiadomość, link, prośbę od znajomego albo pilny komunikat.
         </p>
         <p>
           Chciałam pokazać, że o bezpieczeństwie w sieci bardzo często nie decyduje sama wiedza techniczna,
-          ale jeden moment: kliknąć czy sprawdzić, zaufać czy się zatrzymać, działać szybko czy pomyśleć chwilę dłużej.
+          ale jeden moment: kliknąć czy sprawdzić, zaufać czy się zatrzymać.
         </p>
         <p>
           To trochę jak lustro — pokazuje nie to, co deklarujemy, tylko to, jak naprawdę reagujemy.
         </p>
-        <ul class="goal-list">
-          <li>pokazanie, jak działają najczęstsze mechanizmy manipulacji w sieci,</li>
-          <li>połączenie wiedzy informatycznej z praktycznym podejmowaniem decyzji,</li>
-          <li>uświadomienie, że cyberbezpieczeństwo dotyczy codziennych sytuacji, a nie tylko specjalistów,</li>
-          <li>zachęcenie użytkownika do myślenia, a nie tylko do zaznaczania odpowiedzi.</li>
-        </ul>
       </div>
     </div>
   `;
@@ -146,7 +153,7 @@ function renderThreatCards() {
     <div class="section">
       <h2 class="section-title">Na co naprawdę najłatwiej się nabrać?</h2>
       <p class="section-text">
-        Wiele zagrożeń nie wygląda groźnie. Wręcz przeciwnie — ich siła polega na tym, że przypominają coś znajomego,
+        Wiele zagrożeń nie wygląda groźnie. Ich siła polega na tym, że przypominają coś znajomego,
         pilnego albo po prostu bardzo wygodnego.
       </p>
 
@@ -154,33 +161,25 @@ function renderThreatCards() {
         <div class="threat-card">
           <div class="threat-icon">🎣</div>
           <h3 class="threat-title">Phishing</h3>
-          <p class="threat-text">
-            Wygląda jak zwykła wiadomość, ale liczy na Twój pośpiech i zaufanie.
-          </p>
+          <p class="threat-text">Wygląda jak zwykła wiadomość, ale liczy na Twój pośpiech i zaufanie.</p>
         </div>
 
         <div class="threat-card">
           <div class="threat-icon">💳</div>
           <h3 class="threat-title">Fałszywy sklep</h3>
-          <p class="threat-text">
-            Kusi ceną tak dobrą, że aż szkoda nie kliknąć. I właśnie na to liczy.
-          </p>
+          <p class="threat-text">Kusi ceną tak dobrą, że aż szkoda nie kliknąć. I właśnie na to liczy.</p>
         </div>
 
         <div class="threat-card">
           <div class="threat-icon">📱</div>
           <h3 class="threat-title">BLIK od znajomego</h3>
-          <p class="threat-text">
-            Wykorzystuje zaufanie, nie technologię. Czasem to najbardziej działa.
-          </p>
+          <p class="threat-text">Wykorzystuje zaufanie, nie technologię. Czasem to najbardziej działa.</p>
         </div>
 
         <div class="threat-card">
           <div class="threat-icon">🌟</div>
           <h3 class="threat-title">Deepfake i AI</h3>
-          <p class="threat-text">
-            Coś brzmi albo wygląda wiarygodnie, ale wiarygodne wcale nie jest.
-          </p>
+          <p class="threat-text">Coś brzmi albo wygląda wiarygodnie, ale wiarygodne wcale nie jest.</p>
         </div>
       </div>
     </div>
@@ -192,40 +191,15 @@ function renderFlow() {
     <div class="section">
       <h2 class="section-title">Jak ktoś próbuje Cię podejść krok po kroku?</h2>
       <p class="section-text">
-        Większość ataków nie zaczyna się od skomplikowanego kodu. Zaczyna się od człowieka i od chwili,
-        w której coś wydaje się zwyczajne.
+        Większość ataków nie zaczyna się od skomplikowanego kodu. Zaczyna się od człowieka.
       </p>
 
       <div class="flow-grid">
-        <div class="flow-step">
-          <div class="flow-number">1</div>
-          <h3 class="flow-title">Wygląda normalnie</h3>
-          <div class="flow-text">Wiadomość przypomina coś, co już znasz: szkołę, bank, kuriera albo znajomego.</div>
-        </div>
-
-        <div class="flow-step">
-          <div class="flow-number">2</div>
-          <h3 class="flow-title">Tworzy presję</h3>
-          <div class="flow-text">Pojawia się pośpiech: teraz, pilnie, ostatnia szansa, konto zaraz zniknie.</div>
-        </div>
-
-        <div class="flow-step">
-          <div class="flow-number">3</div>
-          <h3 class="flow-title">Wymusza kliknięcie</h3>
-          <div class="flow-text">Masz kliknąć, zapłacić, podać kod albo zalogować się bez zastanowienia.</div>
-        </div>
-
-        <div class="flow-step">
-          <div class="flow-number">4</div>
-          <h3 class="flow-title">Przejmuje dostęp</h3>
-          <div class="flow-text">W tym momencie można stracić konto, dane, pieniądze albo kontrolę nad profilem.</div>
-        </div>
-
-        <div class="flow-step">
-          <div class="flow-number">5</div>
-          <h3 class="flow-title">Zostawia skutki</h3>
-          <div class="flow-text">Problem rzadko kończy się na jednej osobie. Często zaczyna dotyczyć też innych.</div>
-        </div>
+        <div class="flow-step"><div class="flow-number">1</div><h3 class="flow-title">Wygląda normalnie</h3><div class="flow-text">Wiadomość przypomina coś, co już znasz.</div></div>
+        <div class="flow-step"><div class="flow-number">2</div><h3 class="flow-title">Tworzy presję</h3><div class="flow-text">Pojawia się pośpiech: teraz, pilnie, ostatnia szansa.</div></div>
+        <div class="flow-step"><div class="flow-number">3</div><h3 class="flow-title">Wymusza kliknięcie</h3><div class="flow-text">Masz kliknąć, zapłacić, podać kod albo zalogować się.</div></div>
+        <div class="flow-step"><div class="flow-number">4</div><h3 class="flow-title">Przejmuje dostęp</h3><div class="flow-text">Można stracić konto, dane, pieniądze albo kontrolę nad profilem.</div></div>
+        <div class="flow-step"><div class="flow-number">5</div><h3 class="flow-title">Zostawia skutki</h3><div class="flow-text">Problem często zaczyna dotyczyć też innych osób.</div></div>
       </div>
     </div>
   `;
@@ -236,7 +210,7 @@ function renderFlags() {
     <div class="section">
       <h2 class="section-title">5 znaków ostrzegawczych</h2>
       <p class="section-text">
-        To są momenty, przy których naprawdę warto się zatrzymać — nawet jeśli wszystko wygląda bardzo przekonująco.
+        To są momenty, przy których naprawdę warto się zatrzymać.
       </p>
 
       <div class="red-flags">
@@ -316,43 +290,35 @@ function renderQuiz() {
 }
 
 function renderResult() {
-
-  let totalPoints = 0;
-
-  questions.forEach(function(q) {
-    if (answers[q.id] !== undefined) {
-      totalPoints += q.options[answers[q.id]].points;
-    }
-  });
-
-  const percent = Math.round(
-    (totalPoints / (questions.length * 2)) * 100
-  );
-
+  const percent = getScore();
   const profile = getProfile(percent);
+
+  const analysisUrl = analysisBaseUrl + "?score=" + encodeURIComponent(percent);
 
   return `
     <div class="result-box">
+      <div class="result-score">${percent}%</div>
+      <div class="result-profile">${profile}</div>
+      <p class="result-text">${getResultDescription(percent)}</p>
 
-      <div class="result-score">
-        ${percent}%
-      </div>
-
-      <div class="result-profile">
-        ${profile}
-      </div>
-
-      <p class="result-text">
-        ${getResultDescription(percent)}
-      </p>
-
-      <a 
-        class="next-btn"
-        href="https://gabr1elastasz3wska-del.github.io/CYBER-MIRROR-ANALYSIS/?score=${percent}"
-      >
+      <a class="next-btn" href="${analysisUrl}">
         Zobacz, co o Tobie mówi ten wynik
       </a>
 
+      <div class="small-note">
+        Link do analizy: <br>
+        <span style="word-break: break-all;">${analysisUrl}</span>
+      </div>
+    </div>
+  `;
+}
+
+function renderFooter() {
+  return `
+    <div class="footer">
+      <strong>Autorka projektu:</strong> Gabriela Staszewska ★<br>
+      uczennica klasy 3b<br>
+      LO im. Adama Mickiewicza w Żychlinie
     </div>
   `;
 }
@@ -376,8 +342,7 @@ function renderApp() {
           <h1 class="title">CyberMirror User</h1>
           <p class="subtitle">
             Zanim klikniesz — sprawdź, kto naprawdę jest po drugiej stronie ekranu.
-            Ta strona nie jest tylko quizem. To próba pokazania, jak łatwo można dać się złapać na coś,
-            co wygląda zwyczajnie.
+            Ta strona pokazuje, jak łatwo można dać się złapać na coś, co wygląda zwyczajnie.
           </p>
           <a class="hero-button" href="#quiz">Rozpocznij symulację</a>
           <div class="author-note">projekt Gabrieli Staszewskiej</div>
