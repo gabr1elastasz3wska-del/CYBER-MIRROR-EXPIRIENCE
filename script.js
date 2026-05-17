@@ -326,7 +326,7 @@ function renderResult() {
   const percent = Math.round((totalPoints / (questions.length * 2)) * 100) || 0;
   const profile = getProfile(percent);
 
-  const analysisBaseUrl = "https://gabr1elastasz3wska-del.github.io/CYBER-MIRROR-ANALYSIS/";
+  const analysisBaseUrl = "https://gabr1elastasz3wska-del.github.io/CYBER-MIRROR-ANALYSIS";
 
   const analysisUrl =
     analysisBaseUrl +
@@ -340,7 +340,11 @@ function renderResult() {
       <div class="result-score">${percent}%</div>
       <div class="result-profile">${profile}</div>
       <p class="result-text">${getResultDescription(percent)}</p>
-      <a class="next-btn" href="${analysisUrl}">Zobacz, co o Tobie mówi ten wynik</a>
+
+      <button class="next-btn" onclick="window.location.href='${analysisUrl}'">
+        Zobacz, co o Tobie mówi ten wynik
+      </button>
+
       <div class="small-note">
         To nie jest tylko wynik quizu — to zapis Twoich decyzji w sytuacjach, które naprawdę mogą się wydarzyć.
       </div>
