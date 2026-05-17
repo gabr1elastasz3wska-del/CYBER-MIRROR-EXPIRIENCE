@@ -316,43 +316,43 @@ function renderQuiz() {
 }
 
 function renderResult() {
+
   let totalPoints = 0;
 
-  questions.forEach(function (q) {
+  questions.forEach(function(q) {
     if (answers[q.id] !== undefined) {
       totalPoints += q.options[answers[q.id]].points;
     }
   });
 
-  const percent = Math.round((totalPoints / (questions.length * 2)) * 100) || 0;
-  const profile = getProfile(percent);
+  const percent = Math.round(
+    (totalPoints / (questions.length * 2)) * 100
+  );
 
-  const analysisUrl = analysisBaseUrl + "?score=" + percent;
+  const profile = getProfile(percent);
 
   return `
     <div class="result-box">
-      <div class="result-score">${percent}%</div>
-      <div class="result-profile">${profile}</div>
-      <p class="result-text">${getResultDescription(percent)}</p>
 
-      <a class="next-btn" href="${analysisUrl}" target="_self">
+      <div class="result-score">
+        ${percent}%
+      </div>
+
+      <div class="result-profile">
+        ${profile}
+      </div>
+
+      <p class="result-text">
+        ${getResultDescription(percent)}
+      </p>
+
+      <a 
+        class="next-btn"
+        href="https://https://gabr1elastasz3wska-del.github.io/CYBER-MIRROR-ANALYSIS/?score=${percent}"
+      >
         Zobacz, co o Tobie mówi ten wynik
       </a>
 
-      <p class="small-note">
-        Jeśli przycisk nie zadziała, skopiuj ten link:<br>
-        <span style="word-break: break-all;">${analysisUrl}</span>
-      </p>
-    </div>
-  `;
-}
-
-function renderFooter() {
-  return `
-    <div class="footer">
-      <strong>Autorka projektu:</strong> Gabriela Staszewska ★<br>
-      uczennica klasy 3b<br>
-      LO im. Adama Mickiewicza w Żychlinie
     </div>
   `;
 }
