@@ -395,3 +395,4 @@ function renderApp() {
 }
 
 renderApp();
+console.log("NOWA WERSJA SCRIPT DZIAŁA");
