@@ -115,7 +115,7 @@ function finishQuiz() {
 function renderProjectInfo() {
   return `
     <div class="section">
-      <h2 class="section-title">Dlaczego powstał CyberMirror?</h2>
+      <h2 class="section-title">Dlaczego powstał CyberMirror User?</h2>
       <div class="info-panel">
         <p>
           Stworzyłam tę stronę z myślą o tym, że cyberzagrożenia nie wyglądają dziś jak coś z filmów o hakerach.
@@ -125,6 +125,9 @@ function renderProjectInfo() {
         <p>
           Chciałam pokazać, że o bezpieczeństwie w sieci bardzo często nie decyduje sama wiedza techniczna,
           ale jeden moment: kliknąć czy sprawdzić, zaufać czy się zatrzymać, działać szybko czy pomyśleć chwilę dłużej.
+        </p>
+        <p>
+          To trochę jak lustro — pokazuje nie to, co deklarujemy, tylko to, jak naprawdę reagujemy.
         </p>
         <ul class="goal-list">
           <li>pokazanie, jak działają najczęstsze mechanizmy manipulacji w sieci,</li>
@@ -230,7 +233,7 @@ function renderFlow() {
 function renderFlags() {
   return `
     <div class="section">
-      <h2 class="section-title">5 znaków ostrzegawczych ✦</h2>
+      <h2 class="section-title">5 znaków ostrzegawczych</h2>
       <p class="section-text">
         To są momenty, przy których naprawdę warto się zatrzymać — nawet jeśli wszystko wygląda bardzo przekonująco.
       </p>
@@ -290,7 +293,7 @@ function renderQuiz() {
     <div class="section" id="quiz">
       <h2 class="section-title">Co byś zrobił na moim miejscu?</h2>
       <p class="section-text">
-        Tu nie chodzi tylko o wiedzę. Bardziej o to, czy zauważysz moment, w którym coś zaczyna być podejrzane.
+        Większość osób jest przekonana, że by się nie nabrała. Dopóki nie znajdzie się dokładnie w takiej sytuacji.
       </p>
 
       <div class="quiz-wrap">
@@ -323,7 +326,8 @@ function renderResult() {
   const percent = Math.round((totalPoints / (questions.length * 2)) * 100) || 0;
   const profile = getProfile(percent);
 
-  const "analysisBaseUrl" = "https://gabr1elastasz3wska-del.github.io/CYBER-MIRROR-ANALYSIS/";
+  const analysisBaseUrl = "https://gabr1elastasz3wska-del.github.io/CYBER-MIRROR-ANALYSIS/";
+
   const analysisUrl =
     analysisBaseUrl +
     "?score=" +
@@ -343,10 +347,11 @@ function renderResult() {
     </div>
   `;
 }
+
 function renderFooter() {
   return `
     <div class="footer">
-      <strong>Autorka projektu:</strong> Gabriela Staszewska ✦<br>
+      <strong>Autorka projektu:</strong> Gabriela Staszewska ★<br>
       uczennica klasy 3b<br>
       LO im. Adama Mickiewicza w Żychlinie
     </div>
@@ -362,22 +367,21 @@ function renderApp() {
         <div class="hero">
           <div class="stars">
             <span class="star s1">★</span>
-<span class="star s2">★</span>
-<span class="star s3">★</span>
-<span class="star s4">★</span>
-<span class="star s5">★</span>
-
+            <span class="star s2">★</span>
+            <span class="star s3">★</span>
+            <span class="star s4">★</span>
+            <span class="star s5">★</span>
           </div>
 
           <div class="badge">Projekt konkursowy • Cyberbezpieczeństwo</div>
-          <h1 class="title">Cyber-Mirror Expirience</h1>
+          <h1 class="title">CyberMirror User</h1>
           <p class="subtitle">
             Zanim klikniesz — sprawdź, kto naprawdę jest po drugiej stronie ekranu.
             Ta strona nie jest tylko quizem. To próba pokazania, jak łatwo można dać się złapać na coś,
             co wygląda zwyczajnie.
           </p>
           <a class="hero-button" href="#quiz">Rozpocznij symulację</a>
-          <div class="author-note">projekt Gabrieli Staszewskiej ✦</div>
+          <div class="author-note">projekt Gabrieli Staszewskiej</div>
         </div>
 
         ${renderProjectInfo()}
@@ -398,11 +402,10 @@ function renderApp() {
             <span class="star s3">★</span>
             <span class="star s4">★</span>
             <span class="star s5">★</span>
-
           </div>
 
           <div class="badge">Wynik symulacji</div>
-          <h1 class="title">CyberMirror</h1>
+          <h1 class="title">CyberMirror User</h1>
           <p class="subtitle">
             Twoje decyzje w sieci mówią o Tobie więcej, niż może się wydawać.
           </p>
